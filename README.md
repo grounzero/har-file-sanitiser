@@ -58,7 +58,7 @@ Sanitises the following types of sensitive information:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/har-sanitiser.git
+git clone https://github.com/grounzero/har-sanitiser.git
 cd har-sanitiser
 
 # Option 1: Install directly

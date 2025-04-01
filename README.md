@@ -58,8 +58,8 @@ Sanitises the following types of sensitive information:
 
 ```bash
 # Clone the repository
-git clone https://github.com/grounzero/har-sanitiser.git
-cd har-sanitiser
+git clone https://github.com/grounzero/har-file-sanitiser.git
+cd har-file-sanitiser
 
 # Option 1: Install directly
 pip install -e .

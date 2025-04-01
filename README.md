@@ -1,12 +1,10 @@
-# har-file-sanitiser
+# HAR File Sanitiser
 
-# HAR File Sanitizer
-
-A comprehensive tool for sanitizing HAR (HTTP Archive) files to safely prepare browser logs for sharing with third parties.
+A comprehensive tool for sanitising HAR (HTTP Archive) files to safely prepare browser logs for sharing with third parties.
 
 ## Overview
 
-This tool thoroughly sanitizes HAR files by removing or redacting sensitive and unnecessary data while preserving the essential application-specific information needed for analysis. It's designed with security in mind, using a whitelist-based approach to minimize accidental data leaks.
+This tool thoroughly sanitises HAR files by removing or redacting sensitive and unnecessary data whilst preserving the essential application-specific information needed for analysis. It's designed with security in mind, using a whitelist-based approach to minimise accidental data leaks.
 
 ## Features
 
@@ -14,18 +12,18 @@ This tool thoroughly sanitizes HAR files by removing or redacting sensitive and 
 
 - **Application-Specific Log Filtering**: Retains only necessary information for debugging and analysis
 - **Robust Sensitive Data Detection**: Uses regex patterns to identify and redact sensitive information
-- **Consistent Anonymization**: Replaces sensitive values with hashed versions to maintain referential integrity
+- **Consistent Anonymisation**: Replaces sensitive values with hashed versions to maintain referential integrity
 
-### Data Sanitization
+### Data Sanitisation
 
-Sanitizes the following types of sensitive information:
+Sanitises the following types of sensitive information:
 
 - **Server Information**:
   - Internal/external server names and hostnames
 
-- **Authentication & Authorization Data**:
+- **Authentication & Authorisation Data**:
   - OAuth tokens, JWT tokens
-  - Authorization headers
+  - Authorisation headers
   - API keys and secrets
   - Session IDs and access tokens
 
@@ -52,16 +50,16 @@ Sanitizes the following types of sensitive information:
 
 - Whitelist-based approach for maximum security
 - Consistent hashing to maintain data relationships
-- Preservation of error message context while removing sensitive data
+- Preservation of error message context whilst removing sensitive data
 - Timestamps are preserved to maintain activity timing information
-- Sanitization metadata added to track processing
+- Sanitisation metadata added to track processing
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/har-sanitizer.git
-cd har-sanitizer
+git clone https://github.com/yourusername/har-sanitiser.git
+cd har-sanitiser
 
 # Option 1: Install directly
 pip install -e .
@@ -75,27 +73,27 @@ pip install -r requirements.txt
 ### Command Line
 
 ```bash
-python har_sanitizer.py input.har sanitized.har
+python har_sanitiser.py input.har sanitised.har
 ```
 
 ### As a Library
 
 ```python
-from har_sanitizer import HARSanitizer
+from har_sanitiser import HARSanitiser
 
-# Initialize the sanitizer
-sanitizer = HARSanitizer()
+# Initialise the sanitiser
+sanitiser = HARSanitiser()
 
 # Load a HAR file
 with open('input.har', 'r') as f:
     har_data = json.load(f)
 
-# Sanitize the HAR data
-sanitized_har = sanitizer.sanitize_har(har_data)
+# Sanitise the HAR data
+sanitised_har = sanitiser.sanitise_har(har_data)
 
-# Save the sanitized HAR file
-with open('sanitized.har', 'w') as f:
-    json.dump(sanitized_har, f, indent=2)
+# Save the sanitised HAR file
+with open('sanitised.har', 'w') as f:
+    json.dump(sanitised_har, f, indent=2)
 ```
 
 ### Custom Configuration
@@ -107,10 +105,10 @@ config = {
     "remove_tracking_params": True
 }
 
-sanitizer = HARSanitizer(config=config)
+sanitiser = HARSanitiser(config=config)
 ```
 
-## Sanitization Details
+## Sanitisation Details
 
 | Data Type | Treatment |
 |-----------|-----------|
@@ -122,7 +120,7 @@ sanitizer = HARSanitizer(config=config)
 | Query Parameters | Sensitive ones redacted, tracking ones removed |
 | User-Agent | Redacted |
 | Referer | Redacted |
-| JSON Content | Recursively sanitized |
+| JSON Content | Recursively sanitised |
 
 ## Example
 
@@ -139,7 +137,7 @@ sanitizer = HARSanitizer(config=config)
 }
 ```
 
-**After sanitization:**
+**After sanitisation:**
 ```json
 {
   "request": {
@@ -155,10 +153,10 @@ sanitizer = HARSanitizer(config=config)
 ## Security Considerations
 
 - This tool is designed for preparing HAR files for sharing with third parties.
-- Always review sanitized files before sharing to ensure all sensitive data has been removed.
-- Consider implementing additional domain-specific sanitization as needed.
+- Always review sanitised files before sharing to ensure all sensitive data has been removed.
+- Consider implementing additional domain-specific sanitisation as needed.
 
-## License
+## Licence
 
 MIT
 

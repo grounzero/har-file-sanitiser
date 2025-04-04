@@ -4,5 +4,6 @@ HAR File Sanitiser - A tool for sanitising HAR files to safely prepare browser l
 
 from .core import HARSanitiser
 from .utils import read_har_file, write_har_file
+from .cli import main
 
 __version__ = "1.0.0"

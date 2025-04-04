@@ -1,7 +1,7 @@
 import json
 import copy
 from datetime import datetime, UTC
-from har_sanitiser_improved import HARSanitiser
+from har_sanitiser import HARSanitiser
 
 # --- Sample HAR data for testing ---
 sample_har_entry = {

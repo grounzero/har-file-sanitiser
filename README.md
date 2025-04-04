@@ -227,9 +227,12 @@ The configuration file supports the following options:
 | `remove_tracking_params` | Whether to remove tracking parameters | true |
 | `hash_sensitive_values` | Whether to hash sensitive values | true |
 | `redact_base64_content` | Whether to redact base64 content | true |
+| `parallel` | Whether to use parallel processing | true |
+| `processes` | Number of processes to use for parallel processing | number of CPU cores |
 | `excluded_domains` | List of domains to exclude from sanitization | [] |
 | `content_types_to_sanitise` | List of content types to sanitize | ['application/json', 'application/x-www-form-urlencoded', 'text/plain', 'text/html'] |
 | `sanitisation_options` | Options for specific data types | {'ip_addresses': true, 'email_addresses': true, 'credit_cards': true, 'phone_numbers': true, 'guid_uuid': true, 'jwt_tokens': true} |
+
 
 ## Running Tests
 
@@ -308,7 +311,6 @@ The test suite covers:
 ```markdown
 ## Project Structure
 
-```
 har-file-sanitiser/
 ├── src/                      # Source code
 │   └── har_sanitiser/        # Main package

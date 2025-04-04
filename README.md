@@ -126,7 +126,7 @@ Basic usage:
 # Activate the virtual environment (if not already activated)
 source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 
-# Run the sanitizer
+# Run the sanitiser
 har-sanitiser input.har sanitised.har
 ```
 
@@ -150,11 +150,11 @@ har-sanitiser --verbose --config my_config.json input.har
 
 ### Large File Processing
 
-The sanitizer automatically detects large HAR files and uses streaming processing to handle them efficiently:
+The sanitiser automatically detects large HAR files and uses streaming processing to handle them efficiently:
 - Reduces memory usage by processing entries incrementally
 - Provides progress reporting with a progress bar
-- Automatically selects the best processing method based on file size
-- Uses parallel processing by default for faster sanitization
+- Automatically selects the best processing method based on file sise
+- Uses parallel processing by default for faster sanitisation
 
 ```bash
 # Disable parallel processing for large files
@@ -196,7 +196,7 @@ write_har_file('sanitised.har', sanitised_har)
 
 # For large files, use the streaming API (parallel processing is enabled by default)
 duration = sanitiser.sanitise_har_streaming('input.har', 'sanitised.har')
-print(f"Sanitization completed in {duration:.2f} seconds")
+print(f"Sanitisation completed in {duration:.2f} seconds")
 print(f"Sensitive data found: {sum(sanitiser.metrics['sensitive_data_found'].values())} instances")
 
 # To disable parallel processing
@@ -229,8 +229,8 @@ The configuration file supports the following options:
 | `redact_base64_content` | Whether to redact base64 content | true |
 | `parallel` | Whether to use parallel processing | true |
 | `processes` | Number of processes to use for parallel processing | number of CPU cores |
-| `excluded_domains` | List of domains to exclude from sanitization | [] |
-| `content_types_to_sanitise` | List of content types to sanitize | ['application/json', 'application/x-www-form-urlencoded', 'text/plain', 'text/html'] |
+| `excluded_domains` | List of domains to exclude from sanitisation | [] |
+| `content_types_to_sanitise` | List of content types to sanitise | ['application/json', 'application/x-www-form-urlencoded', 'text/plain', 'text/html'] |
 | `sanitisation_options` | Options for specific data types | {'ip_addresses': true, 'email_addresses': true, 'credit_cards': true, 'phone_numbers': true, 'guid_uuid': true, 'jwt_tokens': true} |
 
 
@@ -347,11 +347,11 @@ har-file-sanitiser/
 
 2. **Invalid HAR file**: If you get JSON parsing errors, verify that your HAR file is valid. You can use online JSON validators to check.
 
-3. **Configuration errors**: If the sanitizer isn't behaving as expected, check your configuration file for syntax errors or invalid options.
+3. **Configuration errors**: If the sanitiser isn't behaving as expected, check your configuration file for syntax errors or invalid options.
 
 ### Debugging
 
-Enable verbose logging to get more information about the sanitization process:
+Enable verbose logging to get more information about the sanitisation process:
 
 ```bash
 python har_sanitiser.py --verbose input.har sanitised.har

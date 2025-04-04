@@ -1,0 +1,73 @@
+{
+  "log_level": "debug",
+  
+  "sensitive_headers": [
+    "authorization",
+    "cookie",
+    "set-cookie",
+    "x-api-key",
+    "x-client-id",
+    "x-session-id",
+    "user-agent",
+    "referer",
+    "x-forwarded-for",
+    "etag",
+    "if-modified-since",
+    "last-modified",
+    "x-custom-auth-token",
+    "x-client-secret"
+  ],
+  
+  "sensitive_params": [
+    "token",
+    "key",
+    "password",
+    "secret",
+    "auth",
+    "api_key",
+    "access_token",
+    "refresh_token",
+    "client_id",
+    "client_secret",
+    "account_id"
+  ],
+  
+  "tracking_params": [
+    "utm_",
+    "fbclid",
+    "gclid",
+    "_ga",
+    "msclkid",
+    "mc_eid",
+    "yclid",
+    "dclid"
+  ],
+  
+  "preserve_timestamps": true,
+  "remove_tracking_params": true,
+  "hash_sensitive_values": true,
+  "redact_base64_content": true,
+  "parallel": true,
+  "processes": 4,
+  
+  "excluded_domains": [
+    "analytics.example.com",
+    "metrics.example.org"
+  ],
+  
+  "content_types_to_sanitise": [
+    "application/json",
+    "application/x-www-form-urlencoded",
+    "text/plain",
+    "text/html"
+  ],
+  
+  "sanitisation_options": {
+    "ip_addresses": true,
+    "email_addresses": true,
+    "credit_cards": true,
+    "phone_numbers": true,
+    "guid_uuid": true,
+    "jwt_tokens": true
+  }
+}

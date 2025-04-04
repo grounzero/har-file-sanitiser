@@ -56,6 +56,30 @@ Sanitises the following types of sensitive information:
 - Sanitisation metadata added to track processing
 - Proper validation to reduce false positives
 
+## Project Structure
+
+```markdown
+har-file-sanitiser/
+├── src/                      # Source code
+│   └── har_sanitiser/        # Main package
+│       ├── __init__.py       # Package exports
+│       ├── core.py           # Core sanitisation functionality
+│       ├── utils.py          # Utility functions
+│       └── cli.py            # Command-line interface
+├── tests/                    # Test suite
+│   ├── unit/                 # Unit tests
+│   ├── integration/          # Integration tests
+│   └── fixtures/             # Test fixtures
+├── examples/                 # Example usage
+│   ├── example_usage.py      # Example script
+│   ├── sample.har            # Sample HAR file
+│   └── custom_config.json    # Example configuration
+├── docs/                     # Documentation
+├── setup.py                  # Package setup script
+├── pyproject.toml            # Project metadata
+└── requirements.txt          # Dependencies
+```
+
 ## Prerequisites
 
 - Python 3.6 or higher (recommended due to type hints)
@@ -305,32 +329,6 @@ The test suite covers:
 - **Directory Creation**: Automatically creates output directories if they don't exist
 - **Configurable Logging**: Adjustable log levels via configuration or command line flags
 - **Modern Timestamp Handling**: Uses timezone-aware datetime objects for accurate metadata
-
-## Project Structure
-
-```markdown
-## Project Structure
-
-har-file-sanitiser/
-├── src/                      # Source code
-│   └── har_sanitiser/        # Main package
-│       ├── __init__.py       # Package exports
-│       ├── core.py           # Core sanitisation functionality
-│       ├── utils.py          # Utility functions
-│       └── cli.py            # Command-line interface
-├── tests/                    # Test suite
-│   ├── unit/                 # Unit tests
-│   ├── integration/          # Integration tests
-│   └── fixtures/             # Test fixtures
-├── examples/                 # Example usage
-│   ├── example_usage.py      # Example script
-│   ├── sample.har            # Sample HAR file
-│   └── custom_config.json    # Example configuration
-├── docs/                     # Documentation
-├── setup.py                  # Package setup script
-├── pyproject.toml            # Project metadata
-└── requirements.txt          # Dependencies
-```
 
 ## Security Considerations
 

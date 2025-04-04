@@ -92,25 +92,18 @@ python --version
 
 ## Installation
 
+This package can be installed either directly from the repository or by installing the requirements.
+
+### Step 1: Clone the Repository
+
 ```bash
-# Clone the repository
 git clone https://github.com/grounzero/har-file-sanitiser.git
 cd har-file-sanitiser
-
-# Create and activate a virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-
-# Option 1: Install directly
-pip install -e .
-
-# Option 2: Install requirements only
-pip install -r requirements.txt
 ```
 
-## Virtual Environment
+### Step 2: Set Up a Virtual Environment (Recommended)
 
-It's recommended to use a virtual environment to avoid conflicts with other Python packages:
+Using a virtual environment ensures that the dependencies for this project don't interfere with other Python projects on your system.
 
 ```bash
 # Create a virtual environment
@@ -122,12 +115,29 @@ source venv/bin/activate
 
 # On Windows:
 venv\Scripts\activate
+```
 
-# When you're done, you can deactivate the virtual environment
+When you're done working with the package, you can deactivate the virtual environment:
+
+```bash
 deactivate
 ```
 
-Using a virtual environment ensures that the dependencies for this project don't interfere with other Python projects on your system.
+### Step 3: Install the Package
+
+Choose one of the following installation methods:
+
+- Option 1: Install as an editable package (recommended for development)
+```bash
+pip install -e .
+```
+- Option 2: Install requirements only
+```bash
+pip install -r requirements.txt
+```
+
+
+
 
 ## Verification
 
